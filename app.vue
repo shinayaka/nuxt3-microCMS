@@ -15,25 +15,25 @@
       <v-container>
         <div class="app-content">
           <template v-for="article in articles.contents">
-            <v-card elevation="0"
-              ><v-card-title>{{ article.title }}</v-card-title>
-              <v-card-text>
-                <!-- <v-icon>mdi-tag-outline</v-icon> -->
-                <template v-for="(tag, index) in article.tags">
-                  <!-- <span v-if="index > 0">,&nbsp;</span> -->
-                  <nuxt-link :to="`/articles?tag=${tag.name}`" class="ma-1"
-                    >#{{ tag.name }}</nuxt-link
-                  >
-                  <!-- <v-chip class="ma-1" label variant="outlined"> </v-chip> -->
-                </template>
-                <div>{{ article.beginning }}</div>
-              </v-card-text>
-              <v-card-actions>
-                <nuxt-link :to="`/articles/${article.id}`">Read More</nuxt-link>
-                <v-spacer />
-                <span>{{ article.revisedAt }}</span>
-              </v-card-actions>
-            </v-card>
+            <nuxt-link :to="`/articles/${article.id}`">
+              <v-card elevation="0">
+                <v-card-title>{{ article.title }}</v-card-title>
+                <v-card-text>
+                  <!-- <v-icon>mdi-tag-outline</v-icon> -->
+                  <template v-for="(tag, index) in article.tags">
+                    <!-- <span v-if="index > 0">,&nbsp;</span> -->
+                    <nuxt-link :to="`/articles?tag=${tag.name}`" class="ma-1"
+                      >#{{ tag.name }}</nuxt-link
+                    >
+                    <!-- <v-chip class="ma-1" label variant="outlined"> </v-chip> -->
+                  </template>
+                </v-card-text>
+                <v-card-actions>
+                  <v-spacer />
+                  <span>{{ article.revisedAt }}</span>
+                </v-card-actions>
+              </v-card>
+            </nuxt-link>
             <v-divider />
           </template>
         </div>
@@ -74,7 +74,7 @@ function onClick() {
   width: 60%;
   margin: 0 auto;
 }
-.v-card-actions > a {
+.app-content > a {
   text-decoration: none;
 }
 .v-card-text > a {
