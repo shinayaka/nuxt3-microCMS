@@ -13,4 +13,10 @@ export default defineNuxtConfig({
     },
   },
   ssr: false,
+  runtimeConfig: {
+    public: {
+      myDomain: process.env.NUXT_MY_DOMAIN,
+      apiKey: process.env.NUXT_API_KEY,
+    },
+  },
 });
