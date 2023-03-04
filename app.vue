@@ -21,16 +21,14 @@
                 <v-card-text>
                   <!-- <v-icon>mdi-tag-outline</v-icon> -->
                   <template v-for="(tag, index) in article.tags">
-                    <!-- <span v-if="index > 0">,&nbsp;</span> -->
                     <nuxt-link :to="`/articles?tag=${tag.name}`" class="ma-1"
                       >#{{ tag.name }}</nuxt-link
                     >
-                    <!-- <v-chip class="ma-1" label variant="outlined"> </v-chip> -->
                   </template>
                 </v-card-text>
                 <v-card-actions>
                   <v-spacer />
-                  <span>{{ article.revisedAt }}</span>
+                  <span>{{ formatDate(article.revisedAt) }}</span>
                 </v-card-actions>
               </v-card>
             </nuxt-link>
@@ -40,7 +38,7 @@
       </v-container>
     </v-main>
 
-    <v-footer class="text-center"
+    <v-footer padless class="text-center"
       ><v-row
         ><v-col class="text-center"
           >© {{ new Date().getFullYear() }} {{ constants.siteTitle }}</v-col
@@ -52,6 +50,7 @@
 
 <script setup lang="ts">
 import { constants } from "./constants";
+import { formatDate } from "./js/dateUtils";
 const config = useRuntimeConfig();
 const apiBaseURL = `https://${config.myDomain}.microcms.io/api/v1/`;
 const { data: articles } = await useFetch(apiBaseURL + "articles", {
@@ -71,7 +70,6 @@ function onClick() {
 .app-content {
   position: relative;
   max-width: 800px;
-  width: 60%;
   margin: 0 auto;
 }
 .app-content > a {
