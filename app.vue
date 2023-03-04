@@ -13,28 +13,7 @@
 
     <v-main>
       <v-container>
-        <div class="app-content">
-          <template v-for="article in articles.contents">
-            <nuxt-link :to="`/articles/${article.id}`">
-              <v-card elevation="0">
-                <v-card-title>{{ article.title }}</v-card-title>
-                <v-card-text>
-                  <!-- <v-icon>mdi-tag-outline</v-icon> -->
-                  <template v-for="(tag, index) in article.tags">
-                    <nuxt-link :to="`/articles?tag=${tag.name}`" class="ma-1"
-                      >#{{ tag.name }}</nuxt-link
-                    >
-                  </template>
-                </v-card-text>
-                <v-card-actions>
-                  <v-spacer />
-                  <span>{{ formatDate(article.revisedAt) }}</span>
-                </v-card-actions>
-              </v-card>
-            </nuxt-link>
-            <v-divider />
-          </template>
-        </div>
+        <NuxtPage />
       </v-container>
     </v-main>
 
@@ -50,33 +29,9 @@
 
 <script setup lang="ts">
 import { constants } from "./constants";
-import { formatDate } from "./js/dateUtils";
-const config = useRuntimeConfig();
-const apiBaseURL = `https://${config.myDomain}.microcms.io/api/v1/`;
-const { data: articles } = await useFetch(apiBaseURL + "articles", {
-  headers: { "X-MICROCMS-API-KEY": config.apiKey },
-});
-const { data: tags } = await useFetch(apiBaseURL + "tags", {
-  headers: { "X-MICROCMS-API-KEY": config.apiKey },
-});
-
 const theme = ref("light");
 
 function onClick() {
   theme.value = theme.value === "light" ? "dark" : "light";
 }
 </script>
-<style lang="scss" scoped>
-.app-content {
-  position: relative;
-  max-width: 800px;
-  margin: 0 auto;
-}
-.app-content > a {
-  text-decoration: none;
-}
-.v-card-text > a {
-  color: inherit;
-  text-decoration: none;
-}
-</style>
