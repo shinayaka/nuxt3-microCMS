@@ -1,7 +1,7 @@
 export function createRequest() {
   const config = useRuntimeConfig();
   return {
-    headers: { "X-MICROCMS-API-KEY": config.apiKey },
+    headers: { 'X-MICROCMS-API-KEY': config.apiKey },
   };
 }
 

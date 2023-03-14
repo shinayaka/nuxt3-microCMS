@@ -28,10 +28,10 @@
 </template>
 
 <script setup lang="ts">
-import { constants } from "./constants";
-const theme = ref("light");
+import { constants } from './constants';
+const theme = ref('light');
 
 function onClick() {
-  theme.value = theme.value === "light" ? "dark" : "light";
+  theme.value = theme.value === 'light' ? 'dark' : 'light';
 }
 </script>

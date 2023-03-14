@@ -1,5 +1,5 @@
 const constants = {
-  siteTitle: "しなやかブログ",
+  siteTitle: 'しなやかブログ',
 };
 Object.freeze(constants);
 export { constants };

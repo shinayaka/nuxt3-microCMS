@@ -1,4 +1,4 @@
-import { DateTime } from "luxon";
+import { DateTime } from 'luxon';
 
 /**
  * 日付フォーマット
@@ -8,5 +8,5 @@ import { DateTime } from "luxon";
  */
 export function formatDate(date: string): string {
   const dt = DateTime.fromISO(date);
-  return dt.toFormat("yyyy/MM/dd");
+  return dt.toFormat('yyyy/MM/dd');
 }

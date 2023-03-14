@@ -22,13 +22,13 @@
   </div>
 </template>
 <script setup lang="ts">
-import { formatDate } from "../js/dateUtils";
-import { createRequest, getApiUrl } from "../js/repository";
+import { formatDate } from '../js/dateUtils';
+import { createRequest, getApiUrl } from '../js/repository';
 const { data: articles } = await useFetch(
-  getApiUrl("articles"),
+  getApiUrl('articles'),
   createRequest()
 );
-const { data: tags } = await useFetch(getApiUrl("tags"), createRequest());
+const { data: tags } = await useFetch(getApiUrl('tags'), createRequest());
 </script>
 <style lang="scss" scoped>
 .app-content {

@@ -1,4 +1,4 @@
-import { Tag } from "./tag";
+import { Tag } from './tag';
 export type Article = {
   id: string;
   createdAt: string;
