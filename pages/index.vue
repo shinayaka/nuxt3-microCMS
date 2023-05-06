@@ -9,10 +9,9 @@
               <nuxt-link :to="`/articles?tag=${tag.name}`" class="ma-1">#{{ tag.name }}</nuxt-link>
             </template>
           </v-card-text>
-          <v-card-actions>
-            <v-spacer />
+          <v-card-text class="text-right">
             <span>{{ formatDate(article.revisedAt) }}</span>
-          </v-card-actions>
+          </v-card-text>
         </v-card>
       </nuxt-link>
       <v-divider />
@@ -34,8 +33,14 @@ const { data: tags } = await useFetch(getApiUrl('tags'), createRequest());
 .app-content > a {
   text-decoration: none;
 }
+.v-card-text {
+  padding: 0 1rem;
+}
 .v-card-text > a {
   color: inherit;
   text-decoration: none;
+}
+.v-card-title {
+  white-space: normal;
 }
 </style>
