@@ -10,3 +10,13 @@ export function formatDate(date: string): string {
   const dt = DateTime.fromISO(date);
   return dt.toFormat('yyyy/MM/dd');
 }
+
+/**
+ * 現在日付フォーマット
+ * @returns フォーマット後の文字列
+ * @example 2023-03-03T05:49:27.706Z → 2023/03/03
+ */
+export function formatDateNow(): string {
+  const dt = DateTime.now();
+  return dt.toFormat('yyyy/MM/dd');
+}

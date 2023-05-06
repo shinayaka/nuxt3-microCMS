@@ -1,0 +1,35 @@
+h2 {
+  margin-top: 1em;
+}
+h3 {
+  margin-top: 1em;
+}
+h4 {
+  margin-top: 1em;
+}
+p {
+  margin-top: 1em;
+}
+pre {
+  position: relative;
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 5px;
+  background: #25292f;
+  color: #fff;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+pre button {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  font-size: 1.5em;
+}
+.copied::after {
+  content: 'Copied';
+  position: absolute;
+  top: -1em;
+  left: -1em;
+  font-size: 0.5em;
+}
