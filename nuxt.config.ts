@@ -18,6 +18,12 @@ export default defineNuxtConfig({
     public: {
       myDomain: process.env.NUXT_MY_DOMAIN,
       apiKey: process.env.NUXT_API_KEY,
+      analyticsId: process.env.NUXT_ANALYTICS_ID,
+    },
+    private: {
+      myDomain: process.env.NUXT_MY_DOMAIN,
+      apiKey: process.env.NUXT_API_KEY,
+      analyticsId: process.env.NUXT_ANALYTICS_ID,
     },
   },
 });
