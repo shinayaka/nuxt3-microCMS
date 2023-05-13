@@ -15,6 +15,7 @@
               :icon="theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'"
               @click="onClick"
             />
+            <v-btn icon="mdi-github" :href="`https://github.com/${constants.ownerId}`" />
           </v-col>
         </v-row>
       </v-container>
